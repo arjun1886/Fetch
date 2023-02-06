@@ -6,6 +6,7 @@ import (
 	"sort"
 )
 
+// Takes the the input array of structures, modifies it after points are spent, and returns a final payer to points mapping
 func FetchFinalPointsMap(transactionsStruct *[]types.Transactions, pointsToSpend int) (map[string]int, error) {
 
 	updatedTransactions, err := spendPoints(transactionsStruct, pointsToSpend)
@@ -18,6 +19,7 @@ func FetchFinalPointsMap(transactionsStruct *[]types.Transactions, pointsToSpend
 
 }
 
+// Takes the updated array of structures after points are spent, and returns a final payer to points mapping
 func buildFinalPointsMap(updatedTransactions *[]types.Transactions) map[string]int {
 
 	finalPointsMap := make(map[string]int)
@@ -33,6 +35,7 @@ func buildFinalPointsMap(updatedTransactions *[]types.Transactions) map[string]i
 	return finalPointsMap
 }
 
+// Takes an input array of structures and spends the required number of points and returns the updated array of structures
 func spendPoints(transactionsStruct *[]types.Transactions, pointsToSpend int) (*[]types.Transactions, error) {
 
 	sort.Slice(*transactionsStruct, func(i, j int) bool {

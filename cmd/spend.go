@@ -29,6 +29,7 @@ func main() {
 	fmt.Println("The final output is : " + formattedOutput)
 }
 
+// Formats the final payer to points mapping according to the requirement
 func formatOutput(finalPointsMap map[string]int) string {
 	outputString := "{" + "\n"
 	for payer, points := range finalPointsMap {
