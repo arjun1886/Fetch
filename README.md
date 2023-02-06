@@ -1,6 +1,6 @@
 # Fetch Online Assessment
 
-There is a binary file under the cmd folder called fetch_app.
+There is a binary file under the cmd folder called points_app.
 
 cd into that folder and run the following command in the command line prompt:
 
