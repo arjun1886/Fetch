@@ -4,6 +4,7 @@ import (
 	"fetch/points"
 	"fetch/transactions"
 	"fmt"
+	"log"
 	"strconv"
 )
 
@@ -14,13 +15,13 @@ func main() {
 
 	transactionsStruct, err := transactions.FetchCsvFileAsStruct()
 	if err != nil {
-		fmt.Println(err)
+		log.Fatal(err)
 	}
 
 	finalPointsMap, err := points.FetchFinalPointsMap(transactionsStruct, pointsToSpend)
 
 	if err != nil {
-		fmt.Println(err)
+		log.Fatal(err)
 	}
 
 	fmt.Println(formatOutput(finalPointsMap))
