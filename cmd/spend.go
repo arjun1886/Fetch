@@ -11,6 +11,7 @@ import (
 func main() {
 
 	var pointsToSpend int
+	fmt.Println("Enter the number of points you want to spend below :")
 	fmt.Scanf("%d", &pointsToSpend)
 
 	transactionsStruct, err := transactions.FetchCsvFileAsStruct()
@@ -24,7 +25,8 @@ func main() {
 		log.Fatal(err)
 	}
 
-	fmt.Println(formatOutput(finalPointsMap))
+	formattedOutput := formatOutput(finalPointsMap)
+	fmt.Println("The final output is : " + formattedOutput)
 }
 
 func formatOutput(finalPointsMap map[string]int) string {
